@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Counter</title>
+    <style>
+      body {
+        display: flex;
+        margin: 50px auto;
+        justify-content: center;
+        word-spacing: 5px;
+      }
+      .heading {
+        background-color: cornflowerblue;
+        padding: 30px;
+        margin: 0px;
+      }
+      #text {
+        width: 500px;
+        margin: 0px;
+       
+        padding: 20px;
+        font-size: 18px;
+        font-family: initial;
+        font-weight: bolder;
+      }
+      .character {
+        background-color: cornflowerblue;
+        margin: 0px;
+        padding: 30px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="heading">Word and Character Counter</h1>
+      <textarea id="text" cols="30" rows="10"></textarea>
+      <h2 class="character">
+        <span id="word"> 0 </span>Word and
+         <span id="char"> 0  </span>Character
+      </h2>
+    </div>
+    <script>
+
+let text = document.getElementById("text")
+   text.addEventListener("click",function(){
+       text.style.backgroundColor = " rgb(217, 222, 290)"
+   })
+
+text.addEventListener("input",function(){
+   txt = this.value;
+    document.getElementById("char").innerHTML = txt.length;
+
+       txt = txt.trim()
+    let word = txt.split(" ")
+    let fillBlank = word.filter(function(ele){
+        return ele != ""
+    })
+      document.getElementById("word").innerHTML = fillBlank.length
+
+})
+
+
+
+// PRACTICING 
+    //   let txt = document.getElementById("text");
+    //   txt.addEventListener("input", function () {
+    //     let t = this.value;
+    //     let char = t.length;
+
+    //     document.getElementById("char").innerHTML = char;
+
+    //     t = t.trim();
+    //     let word = t.split(" ");
+    //     let cleanBlank = word.filter(function (ele) {
+    //       return ele != "";
+    //     });
+    //     document.getElementById("word").innerHTML = cleanBlank.length;
+    //   });
+    </script>
+  </body>
+</html>
